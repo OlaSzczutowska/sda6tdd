@@ -30,6 +30,11 @@ public class CalcServiceSteps {
         text = null;
     }
 
+    @And("^I pass blank text value$")
+    public void I_pass_blank_text_value(){
+        text = "";
+    }
+
     @When("^I execute calculate method$")
     public void I_execute_calculate_method(){
         actual = calcService.calculate(text);
