@@ -76,4 +76,12 @@ public class WriterTest {
 
         Assert.assertEquals("Hello, Szymon, Zosia and Michal!", result);
     }
+    @Test
+    public void sayHelloWithMultipleCapitalizedNames(){
+        String name = "SZYMON,JAN,ANNA";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("HELLO, SZYMON, JAN AND ANNA!", result);
+    }
 }
