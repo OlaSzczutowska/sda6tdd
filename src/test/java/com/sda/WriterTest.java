@@ -67,4 +67,13 @@ public class WriterTest {
 
         Assert.assertEquals("Hello, my friend!", result);
     }
+
+    @Test
+    public void sayHelloWithMultipleNames() {
+        String name = "Szymon,Zosia,Michal";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, Szymon, Zosia and Michal!", result);
+    }
 }
