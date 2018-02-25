@@ -10,6 +10,10 @@ public class UserService {
     public UserService() {
         this.users = new ArrayList<>();
     }
+    public boolean isUserPresent(int userId){
+        return users.stream()
+                .anyMatch(e -> userId == e.getId());
+    }
 
     public int getNumberOfUsers(){
         return users.size();
