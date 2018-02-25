@@ -25,24 +25,29 @@ public class CalcServiceSteps {
         text = "2;3;4";
     }
 
-    @And("^I pass null text value$")
+    @And("^I pass null$")
     public void I_pass_null_text_value() {
         text = null;
     }
 
-    @And("^I pass blank text value$")
+    @And("^I pass blank$")
     public void I_pass_blank_text_value() {
         text = "";
     }
 
-    @And("^I pass text with letters$")
-    public void I_pass_text_with_letters() {
-        text = "3a;2;4;5b";
-    }
+   // @And("^I pass text with letters$")
+   // public void I_pass_text_with_letters() {
+   //     text = "3a;2;4;5b";
+   // }
 
     @And("^I pass recipe$")
     public void I_pass_recipe(){
         text = "2 jablka;3 jajka;5 ziemniakow";
+    }
+
+    @And("^I pass (.*) value$")
+    public void I_pass_text_value(String text){
+        this.text = text;
     }
 
     @When("^I execute calculate method$")
@@ -50,7 +55,7 @@ public class CalcServiceSteps {
         actual = calcService.calculate(text);
     }
 
-    @Then("^I get correct result$")
+    @Then("^I get (.*) as a  result$")
     public void I_get_correct_result() {
         Assert.assertEquals(9, actual);
     }
