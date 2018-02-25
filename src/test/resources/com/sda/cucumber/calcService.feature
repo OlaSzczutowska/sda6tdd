@@ -4,15 +4,13 @@ Feature: CalcService
     Given I initialize CalcService
     And I pass 2;3;4 value
     When I execute calculate method
-    Then I get correct result
-
+    Then I get 9 as a result
 
   Scenario: Should return 0 when null text is passed
     Given I initialize CalcService
     And I pass null
     When I execute calculate method
     Then I get 0 as a result
-
 
   Scenario: Should return 0 when blank text is passed
     Given I initialize CalcService
@@ -22,18 +20,12 @@ Feature: CalcService
 
   Scenario: Should return correct value when mixed with letters text is passed
     Given I initialize CalcService
-    And I pass 2a;3;4b value
+    And I pass 3a;2;4;5b value
     When I execute calculate method
-    Then I get result for text with letters
+    Then I get 14 as a result
 
-  Scenario: Should return correct value when recipe list is passed
+  Scenario: Should return correct value when recipe list is pased
     Given I initialize CalcService
-    And I pass 2 jablka;3 jajka;5 ziemniakow value
+    And I pass 2 jablka;3 jajka;5zmieniakow value
     When I execute calculate method
-    Then I get result for recipe
-
-  Scenario: Test
-    Given I initialize CalcService
-    And I pass 5 value
-    When I execute calculate method
-    Then I get result for recipe
+    Then I get 10 as a result
